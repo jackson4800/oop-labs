@@ -14,6 +14,7 @@ public:
 	virtual ~wagon();
 	virtual std::string get_printable_name() const = 0;
 	virtual std::uint32_t get_weight() const = 0;
+	virtual std::uint8_t get_printable_color() const = 0;
 public:
 	std::ostream& print(std::ostream& ss) const;
 public:

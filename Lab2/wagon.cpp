@@ -1,3 +1,5 @@
+#include <Windows.h>
+
 #include "restaurant.hpp"
 #include "cisterna.hpp"
 #include "car_wagon.hpp"
@@ -41,6 +43,15 @@ wagon* wagon::create_restaurant(wagon* prev) {
 }
 
 std::ostream& wagon::print(std::ostream& ss) const {
+	static HANDLE console_handle = GetStdHandle(STD_OUTPUT_HANDLE);
+
+	SetConsoleTextAttribute(console_handle, get_printable_color());
+
+	if (!prev)
+		ss << "_";
+
 	ss << "[" << get_printable_name() << "]_";
+
+	SetConsoleTextAttribute(console_handle, 7);
 	return next ? next->print(ss) : ss;
 }

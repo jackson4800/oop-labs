@@ -110,5 +110,5 @@ std::ostream& chain::print_chain(std::ostream& ss) const {
 
 	auto it = begin();
 	if(it)
-		return ss << "_" << *it << std::endl;
+		return ss << *it << std::endl;
 }

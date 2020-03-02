@@ -12,4 +12,7 @@ public:
 	std::uint32_t get_weight() const override {
 		return 25000;
 	}
+	std::uint8_t get_printable_color() const override {
+		return 11;
+	}
 };

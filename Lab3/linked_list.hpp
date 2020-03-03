@@ -43,7 +43,7 @@ public:
 		static node_t get_dummy() { return node_t(0); }
 	private:
 		void decrement() {
-			if (!value_ || !value_->is_valid())
+			if (!value_)
 				throw iterator_exception("Can't dereference invalid iterator");
 			if (!value_->prev_)
 				throw iterator_exception("Can't decrement begin iterator");
